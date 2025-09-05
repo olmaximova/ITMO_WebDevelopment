@@ -117,11 +117,15 @@ footer{
 }
 
 .product{
-    width: 30%;
-    border: 1px solid #8e4ba1;
+    /* width: 30%; */
+    flex: 1 1 20rem;
+    /* position: relative; */
+    border: 0.5px solid #8e4ba1;
+    background-color: #eeecec;
     padding: 10px 12px;
     border-radius: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .product img{
@@ -131,8 +135,18 @@ footer{
 
 .products__container{
     display: flex;
-    justify-content: space-between;
-    padding: 40px;
+    justify-content: space-around;
+    padding: 20px;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.product .add_to_cart{
+    border: 0;
+    background: #c8a9d0;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 100%;
 }
