@@ -17,19 +17,27 @@ body{
 
 header, footer{
     width: 100%;
-    color: black;
+    background: #eeecec;
     height: 70px;
 }
 
 header{
     display: flex;
+    position: fixed;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+main{
+    padding-top: 70px;
 }
 
 footer{
     position: absolute;
     bottom: 0;
     text-align: center;
-    padding: 20px 0;
+    /* padding: 20px 0; */
 }
 
 .main-header__inner{
@@ -74,7 +82,6 @@ footer{
     width: 100%;
     display: flex;
     padding: 10px 0;
-    /* text-align: right; */
 }
 
 .btn__cart{
