@@ -15,7 +15,6 @@ body{
 
 header, footer{
     width: 100%;
-    /* background-color: rgb(66, 102, 200); */
     color: black;
     height: 70px;
 }
@@ -108,18 +107,21 @@ footer{
     height: 40px;
 }
 
-.products__container{
-    margin: 20px;
-}
-
-#product1{
+.product{
     width: 30%;
     border: 1px solid #8e4ba1;
     padding: 10px 12px;
     border-radius: 20px;
 }
 
-#product1 img{
+.product img{
     width: 100%;
     border-radius: 20px;
+}
+
+.products__container{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    flex-wrap: wrap;
 }
