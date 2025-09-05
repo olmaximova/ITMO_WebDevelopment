@@ -7,10 +7,12 @@
 }
 
 body{
-    height: 100vh;
+    min-height: 100vh;
     background: url('images/background.JPG');
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
+    padding-bottom: 70px;
 }
 
 header, footer{
@@ -112,6 +114,7 @@ footer{
     border: 1px solid #8e4ba1;
     padding: 10px 12px;
     border-radius: 20px;
+    margin-bottom: 20px;
 }
 
 .product img{
@@ -124,4 +127,5 @@ footer{
     justify-content: space-between;
     padding: 40px;
     flex-wrap: wrap;
+    gap: 20px;
 }
