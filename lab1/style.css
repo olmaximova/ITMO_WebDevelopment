@@ -76,6 +76,17 @@ footer{
     /* text-align: right; */
 }
 
+.btn__cart{
+    border: none;
+    background: none;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    align-items: center;
+    color: black;
+    gap: 5px;
+}
+
 .btn__cart img{
     width: 30px;
     height: 30px;
