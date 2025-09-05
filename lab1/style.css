@@ -92,6 +92,17 @@ footer{
     height: 30px;
 }
 
+.btn__github{
+    border: none;
+    background: none;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    justify-items: center;
+    align-items: center;
+    color: black;
+    gap: 5px;
+}
+
 .btn__github img{
     width: 40px;
     height: 40px;
