@@ -6,7 +6,7 @@
     <link rel="stylesheet" href='style.css'>
     <title>Online-store</title>
 </head>
-<body>
+<body class="">
     <header class="main-header">
         <!-- шапка сайта -->
         <div class="main-header__inner">
@@ -14,10 +14,10 @@
                 <h1>IStore</h1>
             </div>
             <nav class="main-header__menu">
-                <a href="!#" class="btn__cart">
+                <div class="btn__cart">
                     <img src="images/cart-icon.png" alt="Корзина">
-                    <span>Корзина</span>
-                </a>
+                    <span>0</span>
+                </div>
             </nav>
         </div>
     </header>
@@ -97,6 +97,27 @@
                 </div>
             </div>
         </div>
+    <div class="cart__window">
+        <h1>Корзина</h1>
+        <div class="products__list">
+            <div class="item">
+                <div class="product__image">
+                    <img src="images/products/shirt.JPG" alt="Рубашка">
+                </div>
+                <div class="name">Рубашка женская</div>
+                <div class="total__price">2500₽</div>
+                <div class="quantity">
+                    <span class="minus_one">-</span>
+                    <span class="count">1</span>
+                    <span class="plus_one">+</span>
+                </div>
+            </div>
+        </div>
+        <div class="cart_buttons">
+            <button class="close_button">Закрыть</button>
+            <button class="checkout_button">Оформить заказ</button>
+        </div>
+    </div>
     </main>
     <footer class="main-footer">
         <!-- подвал сайта -->

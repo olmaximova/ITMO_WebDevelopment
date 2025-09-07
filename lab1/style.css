@@ -49,7 +49,6 @@ footer{
 }
 
 .main-header__logo{
-
     height: 100%;
     display: table;
 }
@@ -59,10 +58,7 @@ footer{
     display: table-cell;
     vertical-align: middle;
     font-size: 30px;
-}
-
-.main-header__menu a{
-    height: 100%;
+    font-weight: 400;
 }
 
 .card{
@@ -70,7 +66,6 @@ footer{
     width: 200px;
     background-color: aquamarine;
 }
-
 
 .main-footer{
     width: 100%;
@@ -85,19 +80,31 @@ footer{
 }
 
 .btn__cart{
-    border: none;
+    /* border: none;
     background: none;
-    display: grid;
-    grid-template-rows: 1fr auto;
-    justify-items: center;
-    align-items: center;
-    color: black;
-    gap: 5px;
+    gap: 5px; */
+    position: relative; 
+    cursor: pointer;
+}
+
+.btn__cart span{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    background-color: red;
+    justify-content: center;
+    align-items: center; 
+    color: wheat;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    right: -10px;
 }
 
 .btn__cart img{
     width: 30px;
     height: 30px;
+    position: relative;
 }
 
 .btn__github{
@@ -136,8 +143,9 @@ footer{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-content: space-around;
     padding: 20px;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 20px;
+    transition: transform .5s;
 }
 
 .product .add_to_cart{
@@ -148,4 +156,73 @@ footer{
     font-size: 12px;
     cursor: pointer;
     width: 100%;
+}
+
+.cart__window{
+    width: 400px;
+    background-color: #c8a9d0;
+    position: fixed;
+    inset: 0 -400px 0 auto;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+}
+
+body.show__cart .cart__window{
+    inset: 0 0 0 auto;
+}
+
+.cart__window h1{
+    font-weight: 400;
+    padding: 20px;
+    margin: 0;
+}
+
+.cart_buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cart_buttons button{
+    background-color: #8e4ba1;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cart_buttons .close_button{
+    background-color: red;
+}
+
+.cart__window img{
+    padding-left: 10px;
+    width: 100%;
+}
+
+.cart__window .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 15px;
+    text-align: center;
+    align-items: center;
+}
+
+.cart__window .item:nth-child(even){
+    background-color: beige;
+}   
+
+.cart__window .quantity span{
+    display: inline-block;
+    width: 15px;
+    background-color: #eeecec;
+    border-radius: 40%;
+    cursor: pointer;
+}
+
+.cart__window .quantity span:nth-child(2){
+    background-color: transparent;
+}
+
+.cart__window .products__list{
+    overflow: auto;
 }
