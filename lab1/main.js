@@ -25,6 +25,7 @@ addButton.forEach(button => {
 
 const addToCart = (product_id) => {
 
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const checkPosition = cart.findIndex(item => item.id === product_id);
 
     const productElement = document.getElementById(product_id);
@@ -54,6 +55,35 @@ const addToCart = (product_id) => {
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    displayItemsCart()
+    displayItemsCart();
 }
 
+
+const displayItemsCart = () => {
+
+    const productsList = document.querySelector('.products__list');
+    const storageItems = JSON.parse(localStorage.getItem('cart')) || [];
+    productsList.innerHTML = '';
+    
+    storageItems.forEach(item => {        
+        const newItem = document.createElement('div');
+        newItem.classList.add('item');
+        newItem.innerHTML = `
+            <div class="product__image">
+                <img src="${item.image}" alt="${item.name}">
+            </div>
+            <div class="name">${item.name}</div>
+            <div class="price">${item.price * item.quantity}₽</div>
+            <div class="quantity">
+                <span class="minus_one">-</span>
+                <span class="count">${item.quantity}</span>
+                <span class="plus_one">+</span>
+            </div>
+        `;
+        
+        productsList.appendChild(newItem);
+
+    });
+}
+
+document.addEventListener('DOMContentLoaded', displayItemsCart());
