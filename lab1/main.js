@@ -3,7 +3,6 @@ let body = document.querySelector('body');
 let closeButton = document.querySelector('.close_button');
 let addButton = document.querySelectorAll('.add_to_cart');
 let cartTab = document.querySelector('.products__list');
-i
 
 let cart = []
 
