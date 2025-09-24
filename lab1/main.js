@@ -78,6 +78,7 @@ const displayItemsCart = () => {
                 <span class="count">${item.quantity}</span>
                 <span class="plus_one" id="${item.id}">+</span>
             </div>
+            <button class="remove_item" id="${item.id}">x</button>
         `;
         
         productsList.appendChild(newItem);
@@ -86,14 +87,15 @@ const displayItemsCart = () => {
 }
 
 document.querySelector('.products__list').addEventListener('click', (event) => {
+
+    const product_id = event.target.getAttribute('id');
+
     if (event.target.classList.contains('minus_one')) {
-        const product_id = event.target.getAttribute('id');
         decreaseByOneCart(product_id);
-    }
-    
-    if (event.target.classList.contains('plus_one')) {
-        const product_id = event.target.getAttribute('id');
+    } else if (event.target.classList.contains('plus_one')) {
         increaseByOneCart(product_id);
+    } else if (event.target.classList.contains('remove_item')){
+        removeItem(product_id);
     }
 });
 
@@ -124,6 +126,14 @@ const decreaseByOneCart = (product_id) => {
         localStorage.setItem('cart', JSON.stringify(cart));
         displayItemsCart();
     };
+}
+
+const removeItem = (product_id) => {
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item.id !== product_id);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayItemsCart();
 }
 
 document.addEventListener('DOMContentLoaded', displayItemsCart());

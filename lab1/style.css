@@ -201,28 +201,50 @@ body.show__cart .cart__window{
 
 .cart__window .item{
     display: grid;
-    grid-template-columns: 70px 150px 50px 1fr;
+    grid-template-columns: 70px 1fr 80px 80px 50px;
     gap: 15px;
     text-align: center;
     align-items: center;
+    padding: 10px;
+    position: relative;
 }
-
-.cart__window .item:nth-child(even){
-    background-color: beige;
-}   
 
 .cart__window .quantity span{
     display: inline-block;
-    width: 15px;
+    width: 25px;
+    height: 25px;
     background-color: #eeecec;
     border-radius: 40%;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cart__window .quantity span:hover{
+    background-color: #a27ab4;
 }
 
 .cart__window .quantity span:nth-child(2){
     background-color: transparent;
+    color: #333;
+    width: auto;
 }
 
 .cart__window .products__list{
     overflow: auto;
+}
+
+.remove_item {
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    transition: 0.3s;
 }
