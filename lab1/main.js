@@ -3,7 +3,7 @@ let body = document.querySelector('body');
 let closeButton = document.querySelector('.close_button');
 let addButton = document.querySelectorAll('.add_to_cart');
 let cartTab = document.querySelector('.products__list');
-let itemsNumber = document.querySelector('.btn__cart span')
+i
 
 let cart = []
 
@@ -75,15 +75,56 @@ const displayItemsCart = () => {
             <div class="name">${item.name}</div>
             <div class="price">${item.price * item.quantity}₽</div>
             <div class="quantity">
-                <span class="minus_one">-</span>
+                <span class="minus_one" id="${item.id}">-</span>
                 <span class="count">${item.quantity}</span>
-                <span class="plus_one">+</span>
+                <span class="plus_one" id="${item.id}">+</span>
             </div>
         `;
         
         productsList.appendChild(newItem);
 
     });
+}
+
+document.querySelector('.products__list').addEventListener('click', (event) => {
+    if (event.target.classList.contains('minus_one')) {
+        const product_id = event.target.getAttribute('id');
+        decreaseByOneCart(product_id);
+    }
+    
+    if (event.target.classList.contains('plus_one')) {
+        const product_id = event.target.getAttribute('id');
+        increaseByOneCart(product_id);
+    }
+});
+
+const increaseByOneCart = (product_id) => {
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const itemIndex = cart.findIndex(item => item.id === product_id);
+    
+    if (itemIndex !== -1) {
+        cart[itemIndex].quantity += 1;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayItemsCart();
+    };
+}
+
+const decreaseByOneCart = (product_id) => {
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const checkPosition  = cart.findIndex(item => item.id === product_id);
+    
+    if (checkPosition !== -1) {
+        if (cart[checkPosition].quantity > 1) {
+            cart[checkPosition].quantity -= 1;
+        } else {
+            cart = cart.filter(item => item.id !== product_id);
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayItemsCart();
+    };
 }
 
 document.addEventListener('DOMContentLoaded', displayItemsCart());
