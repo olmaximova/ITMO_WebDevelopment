@@ -3,6 +3,7 @@ let body = document.querySelector('body');
 let closeButton = document.querySelector('.close_button');
 let addButton = document.querySelectorAll('.add_to_cart');
 let cartTab = document.querySelector('.products__list');
+let itemsNumber = document.querySelector('.btn__cart span');
 
 let cart = []
 
@@ -63,8 +64,11 @@ const displayItemsCart = () => {
     const productsList = document.querySelector('.products__list');
     const storageItems = JSON.parse(localStorage.getItem('cart')) || [];
     productsList.innerHTML = '';
+
+    let totalQuantity = 0;
     
-    storageItems.forEach(item => {        
+    storageItems.forEach(item => {   
+        totalQuantity = totalQuantity + item.quantity;
         const newItem = document.createElement('div');
         newItem.classList.add('item');
         newItem.innerHTML = `
@@ -82,8 +86,10 @@ const displayItemsCart = () => {
         `;
         
         productsList.appendChild(newItem);
-
     });
+
+    itemsNumber.innerText = totalQuantity;
+    
 }
 
 document.querySelector('.products__list').addEventListener('click', (event) => {
