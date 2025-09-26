@@ -4,6 +4,8 @@ let closeButton = document.querySelector('.close_button');
 let addButton = document.querySelectorAll('.add_to_cart');
 let cartTab = document.querySelector('.products__list');
 let itemsNumber = document.querySelector('.btn__cart span');
+let checkoutButton = document.querySelector('.checkout_button');
+let modalForm = document.querySelector('.order_form_container');
 
 let cart = []
 
@@ -89,7 +91,7 @@ const displayItemsCart = () => {
     });
 
     itemsNumber.innerText = totalQuantity;
-    
+
 }
 
 document.querySelector('.products__list').addEventListener('click', (event) => {
@@ -141,5 +143,9 @@ const removeItem = (product_id) => {
     localStorage.setItem('cart', JSON.stringify(cart));
     displayItemsCart();
 }
+
+checkoutButton.addEventListener('click', () => {
+    modalForm.classList.add('display');
+})
 
 document.addEventListener('DOMContentLoaded', displayItemsCart());
