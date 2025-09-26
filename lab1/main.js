@@ -6,6 +6,7 @@ let cartTab = document.querySelector('.products__list');
 let itemsNumber = document.querySelector('.btn__cart span');
 let checkoutButton = document.querySelector('.checkout_button');
 let modalForm = document.querySelector('.order_form_container');
+let closeButtonModal = document.querySelector('.close_btn_modal');
 
 let cart = []
 
@@ -146,6 +147,10 @@ const removeItem = (product_id) => {
 
 checkoutButton.addEventListener('click', () => {
     modalForm.classList.add('display');
+})
+
+closeButtonModal.addEventListener('click', () => {
+    modalForm.classList.remove('display');
 })
 
 document.addEventListener('DOMContentLoaded', displayItemsCart());
