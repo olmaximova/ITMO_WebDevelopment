@@ -17,14 +17,14 @@ body{
 
 header, footer{
     width: 100%;
-    background: #eeecec;
+    background: #c8a9d0;
     height: 70px;
 }
 
 header{
     display: flex;
     position: fixed;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -63,7 +63,6 @@ footer{
 .card{
     height: 200px;
     width: 200px;
-    background-color: aquamarine;
 }
 
 .main-footer{
