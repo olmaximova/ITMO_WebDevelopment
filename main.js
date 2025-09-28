@@ -1,17 +1,17 @@
-let cartIcon = document.querySelector('.btn__cart');
-let body = document.querySelector('body');
-let closeButton = document.querySelector('.close_button');
-let addButton = document.querySelectorAll('.add_to_cart');
-let cartTab = document.querySelector('.products__list');
-let itemsNumber = document.querySelector('.btn__cart span');
-let checkoutButton = document.querySelector('.checkout_button');
-let modalForm = document.querySelector('.order_form_container');
-let closeButtonModal = document.querySelector('.close_btn_modal');
-let totalPriceSpan = document.querySelector('.cart__total_price');
-let popUp = document.querySelector('.pop_up');
-let closeButtonPopUp = document.querySelector('.pop_up_close_button')
-let submitButton = document.querySelector('.submit_btn');
-let orderForm = document.querySelector('.form')
+const cartIcon = document.querySelector('.btn__cart');
+const body = document.querySelector('body');
+const closeButton = document.querySelector('.close_button');
+const addButton = document.querySelectorAll('.add_to_cart');
+const cartTab = document.querySelector('.products__list');
+const itemsNumber = document.querySelector('.btn__cart span');
+const checkoutButton = document.querySelector('.checkout_button');
+const modalForm = document.querySelector('.order_form_container');
+const closeButtonModal = document.querySelector('.close_btn_modal');
+const totalPriceSpan = document.querySelector('.cart__total_price');
+const popUp = document.querySelector('.pop_up');
+const closeButtonPopUp = document.querySelector('.pop_up_close_button')
+const submitButton = document.querySelector('.submit_btn');
+const orderForm = document.querySelector('.form')
 
 let cart = []
 
