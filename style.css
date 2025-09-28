@@ -303,7 +303,8 @@ body.show__cart .cart__window{
 }
 
 .order_form_container{
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     background: linear-gradient(135deg, rgba(200, 169, 208, 0.95),
      rgba(142, 75, 161, 0.95));
     background-size: cover;
@@ -379,4 +380,24 @@ body.show__cart .cart__window{
 .display{
     opacity: 1;
     visibility: visible;
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+    .order_form_container{
+        overflow-y: auto;
+        max-height: 90vh;
+        top: 50%;
+    }
+    
+    .order_form_header{
+        margin: 15px 0 20px 0;
+    }
+    
+    .input_items{
+        margin-bottom: 10px;
+    }
+    
+    .create_order_button .submit_btn{
+        margin: 10px 0 15px 0;
+    }
 }
