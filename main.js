@@ -174,4 +174,7 @@ closeButtonModal.addEventListener('click', () => {
     modalForm.classList.remove('display');
 })
 
-document.addEventListener('DOMContentLoaded', displayItemsCart());
+document.addEventListener('DOMContentLoaded', function() {
+    displayItemsCart();
+    updateTotalPrice();
+});
