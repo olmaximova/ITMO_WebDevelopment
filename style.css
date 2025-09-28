@@ -166,7 +166,7 @@ footer{
     position: fixed;
     inset: 0 -100% 0 auto;
     display: grid;
-    grid-template-rows: 80px 1fr 70px;
+    grid-template-rows: 80px 1fr 70px 60px;
     transition: .5s;
     z-index: 1001;
 }
@@ -281,6 +281,24 @@ body.show__cart .cart__window{
 
 .remove_item:hover {
     background: #c82333;
+}
+
+.cart__total {
+    padding: 20px;
+    background: white;
+    border-top: 2px solid #f0e6f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #5a4a6a;
+}
+
+.cart__total_price{
+    font-size: 20px;
+    font-weight: 600;
+    color: #2f6237;
 }
 
 .order_form_container{
