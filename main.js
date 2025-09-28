@@ -8,6 +8,9 @@ let checkoutButton = document.querySelector('.checkout_button');
 let modalForm = document.querySelector('.order_form_container');
 let closeButtonModal = document.querySelector('.close_btn_modal');
 let totalPriceSpan = document.querySelector('.cart__total_price');
+let popUp = document.querySelector('.pop_up');
+let closeButtonPopUp = document.querySelector('.pop_up_close_button')
+let submitButton = document.querySelector('.submit_btn');
 
 let cart = []
 
@@ -172,6 +175,22 @@ checkoutButton.addEventListener('click', () => {
 
 closeButtonModal.addEventListener('click', () => {
     modalForm.classList.remove('display');
+})
+
+submitButton.addEventListener('click', () => {
+    popUp.classList.add('display');
+    localStorage.clear();
+    body.classList.toggle('show__cart');
+    displayItemsCart();
+    updateTotalPrice();
+    modalForm.classList.remove('display');
+    setTimeout(() => {
+        popUp.classList.remove('display');
+    }, 2000);
+})
+
+closeButtonPopUp.addEventListener('click', () => {
+    popUp.classList.remove('display');
 })
 
 document.addEventListener('DOMContentLoaded', function() {
