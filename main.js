@@ -7,6 +7,7 @@ let itemsNumber = document.querySelector('.btn__cart span');
 let checkoutButton = document.querySelector('.checkout_button');
 let modalForm = document.querySelector('.order_form_container');
 let closeButtonModal = document.querySelector('.close_btn_modal');
+let totalPriceSpan = document.querySelector('.cart__total_price');
 
 let cart = []
 
@@ -59,6 +60,7 @@ const addToCart = (product_id) => {
     localStorage.setItem('cart', JSON.stringify(cart));
 
     displayItemsCart();
+    updateTotalPrice();
 }
 
 
@@ -117,6 +119,7 @@ const increaseByOneCart = (product_id) => {
         cart[itemIndex].quantity += 1;
         localStorage.setItem('cart', JSON.stringify(cart));
         displayItemsCart();
+        updateTotalPrice();
     };
 }
 
@@ -134,6 +137,7 @@ const decreaseByOneCart = (product_id) => {
         
         localStorage.setItem('cart', JSON.stringify(cart));
         displayItemsCart();
+        updateTotalPrice();
     };
 }
 
@@ -143,6 +147,23 @@ const removeItem = (product_id) => {
     cart = cart.filter(item => item.id !== product_id);
     localStorage.setItem('cart', JSON.stringify(cart));
     displayItemsCart();
+    updateTotalPrice();
+}
+
+function updateTotalPrice() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalPrice = 0;
+    
+    cart.forEach(item => {
+        totalPrice += item.price * item.quantity;
+    });
+    
+    totalPriceSpan.textContent = `${totalPrice} ₽`;
+    
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    itemsNumber.textContent = totalItems;
+    
+    return totalPrice;
 }
 
 checkoutButton.addEventListener('click', () => {
