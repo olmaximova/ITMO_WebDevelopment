@@ -10,6 +10,7 @@ body{
     min-height: 100vh;
     position: relative;
     padding-bottom: 70px;
+    background: whitesmoke;
 }
 
 .intro__line{
@@ -109,10 +110,10 @@ footer{
     width: 20px;
     height: 20px;
     display: flex;
-    background-color: red;
+    background-color: black;
     justify-content: center;
     align-items: center; 
-    color: wheat;
+    color: white;
     border-radius: 20px;
     position: absolute;
     top: 50%;
@@ -142,10 +143,9 @@ footer{
 
 .product{
     flex: 1 1 250px;
-    border: 0.5px solid #8e4ba1;
+    border: 0.5px solid black;
     background-color: #eeecec;
     padding: 15px;
-    border-radius: 20px;
     margin-bottom: 20px;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
 }
@@ -154,7 +154,6 @@ footer{
     width: 100%;
     height: 400px;
     object-fit: cover;
-    border-radius: 20px;
 }
 
 .products__container{
@@ -169,7 +168,7 @@ footer{
 
 .product .add_to_cart{
     border: 0;
-    background: #c8a9d0;
+    background: black;
     border-radius: 20px;
     padding: 5px;
     font-size: 12px;
@@ -177,10 +176,12 @@ footer{
     width: 100%;
     margin-top: 5px;
     text-transform: uppercase;
+    color: whitesmoke;
 }
 
 .product h4{
     margin-top: 5px;
+    font-weight: 300;
 }
 
 .product h5{
@@ -189,15 +190,15 @@ footer{
 }
 
 .product .add_to_cart:hover{
-    background: #a27ab4;
+    background:  #333333;
 }
 
 .cart__window{
     width: 100%;
     max-width: 450px;
-    background: var(--glass-bg);
+    background: rgba(255, 255, 255, 0.95);;
     backdrop-filter: blur(80px);
-    border-left: 1px solid var(--glass-border);
+    border-left: 1px solid silver;
     position: fixed;
     inset: 0 -100% 0 auto;
     display: grid;
@@ -215,9 +216,9 @@ body.show__cart .cart__window{
     padding: 20px;
     margin: 0;
     font-size: 24px;
-    color: #5a4a6a;
+    color: black;
     background: white;
-    border-bottom: 1px solid #f0e6f5;
+    border-bottom: 1px solid silver;
 }
 
 .cart_buttons{
@@ -228,24 +229,26 @@ body.show__cart .cart__window{
 }
 
 .cart_buttons button{
-    background-color: #8e4ba1;
+    background-color: #333333;
     border: none;
     font-weight: 500;
     cursor: pointer;
     border-radius: 10px;
     font-size: 16px;
+    color: white;
 }
 
 .cart_buttons .close_button{
-    background-color: #dc3545;
+    background-color: black;
+    
 }
 
 .cart_buttons button:hover{
-    background-color: #7a3a8d;
+    background-color: #777777;
 }
 
 .cart_buttons .close_button:hover{
-    background-color: #c82333;
+    background-color: #777777;;
 }
 
 .cart__window img{
@@ -262,7 +265,7 @@ body.show__cart .cart__window{
     align-items: center;
     padding: 10px;
     position: relative;
-    border-bottom: 1px solid #f0e6f5;
+    border-bottom: 1px solid silver;
 }
 
 .cart__window .quantity{
@@ -278,19 +281,20 @@ body.show__cart .cart__window{
     justify-content: center;
     width: 25px;
     height: 25px;
-    background-color: #eeecec;
+    background-color: black;
+    color: white;
     border-radius: 50%;
     cursor: pointer;
     font-weight: 600;
 }
 
 .cart__window .quantity span:hover{
-    background-color: #a27ab4;
+    background-color: silver;
 }
 
 .cart__window .quantity span:nth-child(2){
     background-color: transparent;
-    color: #333;
+    color: black;
     width: auto;
 }
 
@@ -299,8 +303,8 @@ body.show__cart .cart__window{
 }
 
 .remove_item {
-    background: #ff4444;
-    color: white;
+    background: silver;
+    color: black;
     border: none;
     border-radius: 50%;
     width: 30px;
@@ -317,29 +321,29 @@ body.show__cart .cart__window{
     background: #c82333;
 }
 
-.cart__total {
+.cart__total{
     padding: 20px;
     background: white;
-    border-top: 2px solid #f0e6f5;
+    border-top: 2px solid silver;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
     font-size: 18px;
-    color: #5a4a6a;
+    color: black;
 }
 
 .cart__total_price{
     font-size: 20px;
     font-weight: 600;
-    color: #2f6237;
+    color: black;
 }
 
 .order_form_container{
     width: 90%;
     max-width: 400px;
-    background: linear-gradient(135deg, rgba(200, 169, 208, 0.95),
-     rgba(142, 75, 161, 0.95));
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid silver;
     background-size: cover;
     position: fixed;
     top: 50%;
@@ -355,21 +359,21 @@ body.show__cart .cart__window{
     position: absolute;
     right: 20px;
     font-size: 50px;
-    color: #222;
+    color: black;
     cursor: pointer;
 }
 
 .order_form_header{
     text-align: center;
     margin: 40px 0 150px 0;
-    color: white;
+    color: black;
 }
 
 .order_form_header h1{
     font-weight: 300;
     margin-bottom: 30px;
     text-transform: uppercase;
-    font-size:x-large;
+    font-size: x-large;
 }
 
 .form{
@@ -385,10 +389,12 @@ body.show__cart .cart__window{
 .input_items input{
     width: 310px;
     padding: 15px 15px 15px 50px;
-    border: none;
+    border: 1px solid silver;
     outline: none;
     border-radius: 30px;
     font-size: 16px;
+    background: white;
+    color: black;
 }
 
 .create_order_button {
@@ -406,6 +412,8 @@ body.show__cart .cart__window{
     font-size: 16px;
     text-transform: uppercase;
     margin: 10px 0 50px 0;
+    background: black;
+    color: silver;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .4);
     cursor: pointer;
 }
@@ -420,8 +428,7 @@ body.show__cart .cart__window{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: linear-gradient(135deg, rgba(200, 169, 208, 0.95),
-     rgba(142, 75, 161, 0.95));
+    background: rgba(255, 255, 255, 0.95);
     padding: 30px 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -443,7 +450,7 @@ body.show__cart .cart__window{
 }
 
 .pop_up_text{
-    color: white;
+    color: black;
     font-size: 20px;
     font-weight: 500;
 }
