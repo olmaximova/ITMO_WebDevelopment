@@ -141,6 +141,19 @@ footer{
     height: 40px;
 }
 
+.intro__images{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(50%, 1fr));
+    gap: 0;
+}
+
+.intro__images img{
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    display: block;
+}
+
 .product{
     flex: 1 1 250px;
     border: 0.5px solid black;
@@ -477,5 +490,15 @@ body.show__cart .cart__window{
     
     .create_order_button .submit_btn{
         margin: 10px 0 15px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .intro__images{
+        grid-template-columns: 1fr;
+    }
+    
+    .intro__images img:last-child {
+        display: none;
     }
 }
