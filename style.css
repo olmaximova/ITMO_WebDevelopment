@@ -246,7 +246,6 @@ body.show__cart .cart__window{
     background-color: #eeecec;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s;
     font-weight: 600;
 }
 
