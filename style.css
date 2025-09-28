@@ -8,9 +8,6 @@
 
 body{
     min-height: 100vh;
-    background: url('images/background.JPG');
-    background-size: cover;
-    background-repeat: no-repeat;
     position: relative;
     padding-bottom: 70px;
 }
@@ -26,28 +23,36 @@ body{
     background: black;
 }
 
+.intro__line.hidden {
+    transform: translateY(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 header, footer{
     width: 100%;
-    background: #c8a9d0;
-    height: 70px;
+    height: 55px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 header{
     display: flex;
     position: fixed;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-main{
-    padding-top: 70px;
+    opacity: 0.9;
+    background: white;
 }
 
 footer{
     position: absolute;
     bottom: 0;
     text-align: center;
+    background: silver;
+}
+
+.main-header{
+    position: sticky;
+    top: 0;
 }
 
 .main-header__inner{
