@@ -151,6 +151,8 @@ footer{
     font-size: 12px;
     cursor: pointer;
     width: 100%;
+    margin-top: 5px;
+    text-transform: uppercase;
 }
 
 .product .add_to_cart:hover{
@@ -275,7 +277,6 @@ body.show__cart .cart__window{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 10px;
     transition: 0.3s;
 }
 
