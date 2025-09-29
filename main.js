@@ -11,7 +11,9 @@ const totalPriceSpan = document.querySelector('.cart__total_price');
 const popUp = document.querySelector('.pop_up');
 const closeButtonPopUp = document.querySelector('.pop_up_close_button')
 const submitButton = document.querySelector('.submit_btn');
-const orderForm = document.querySelector('.form')
+const orderForm = document.querySelector('.form');
+const emptyPopUp = document.querySelector('.empty_cart');
+const emptyCloseButton = document.querySelector('.empty_cart_close_button')
 
 let cart = []
 
@@ -170,10 +172,18 @@ function updateTotalPrice() {
     return totalPrice;
 }
 
+function showError() {
+    emptyPopUp.classList.add('display');
+    
+    setTimeout(() => {
+        emptyPopUp.classList.remove('display');
+    }, 2000);
+}
+
 checkoutButton.addEventListener('click', () => {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) {
-        alert('Корзина пуста!');
+        showError();
         return;
     }
     modalForm.classList.add('display');
@@ -181,6 +191,10 @@ checkoutButton.addEventListener('click', () => {
 
 closeButtonModal.addEventListener('click', () => {
     modalForm.classList.remove('display');
+})
+
+emptyCloseButton.addEventListener('click', () => {
+    emptyPopUp.classList.remove('display');
 })
 
 orderForm.addEventListener('submit', (event) => {

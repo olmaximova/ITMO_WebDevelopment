@@ -473,6 +473,43 @@ body.show__cart .cart__window{
     visibility: visible;
 }
 
+.empty_cart{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1003;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.empty_cart_close_button{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    color: #222;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.empty_cart_text{
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.empty_cart.display{
+    opacity: 1;
+    visibility: visible;
+}
+
 @media (max-height: 600px) and (orientation: landscape) {
     .order_form_container{
         overflow-y: auto;
